@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sqlite3
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox
-import random
 
 
 class Ui_MainWindow(object):
@@ -190,24 +189,7 @@ class Ui_MainWindow(object):
         has_lowercase_char = False
         has_special_char = False
         has_length = len(password) >= 8
-        special_characters = '!@#$%^&*()?/'
-        for i in range(len(password)):
-            c = password[i]
-            if c.isdigit():
-                has_number = True
-            elif c.isupper():
-                has_uppercase_char = True
-            elif c.islower():
-                has_lowercase_char = True
-            elif c in special_characters:
-                has_special_char = True
-        if has_number == True and has_uppercase_char == True and has_lowercase_char == True and has_special_char == True and has_length == True:
-            msgBox = QMessageBox()
-            msgBox.setIcon(QMessageBox.Information)
-            msgBox.setText("Entry Successful")
-            msgBox.setWindowTitle("Passman Password Manager")
-            msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-            returnValue = msgBox.exec()
+        
     def search(self):
         print('clicked search')
         passcode = self.passcodeInput.text()

@@ -202,12 +202,7 @@ class Ui_MainWindow(object):
             elif c in special_characters:
                 has_special_char = True
         if has_number == True and has_uppercase_char == True and has_lowercase_char == True and has_special_char == True and has_length == True:
-            msgBox = QMessageBox()
-            msgBox.setIcon(QMessageBox.Information)
-            msgBox.setText("Entry Successful")
-            msgBox.setWindowTitle("Passman Password Manager")
-            msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-            returnValue = msgBox.exec()
+            outputBox =
     def search(self):
         print('clicked search')
         passcode = self.passcodeInput.text()
