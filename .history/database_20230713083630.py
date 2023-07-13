@@ -6,5 +6,9 @@ try:
     cur.execute('CREATE TABLE pass (username VARCHAR, password VARCHAR, website VARCHAR)')
 except:
     print("")
+website = "www.loveworld.com"
+cur.execute("SELECT * FROM pass WHERE website=?",[website])
+ans = cur.fetchall()
+print(ans)
 conn.commit()
 conn.close()

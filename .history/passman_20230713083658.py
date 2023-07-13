@@ -252,6 +252,7 @@ class Ui_MainWindow(object):
             conn.commit()
             conn.close()
         else:
+            print('wrong')
             msgBox = QMessageBox()
             msgBox.setIcon(QMessageBox.Critical)
             msgBox.setWindowTitle("Passman Password Manager")
